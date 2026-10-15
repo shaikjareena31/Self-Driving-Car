@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Self-Driving Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="game-container">
+    <h1>🚗 AI Self-Driving Car</h1>
+    <p class="subtitle">Steer with your finger or use the arrow keys!</p>
+
+    <div class="game-area">
+        <canvas id="gameCanvas" width="850" height="620"></canvas>
+
+        <div class="camera-box">
+            <video id="camera" autoplay muted playsinline></video>
+            <p id="cameraStatus">📷 Starting camera...</p>
+        </div>
+
+        <div class="touch-controls">
+            <button id="leftBtn" type="button">◀</button>
+            <button id="rightBtn" type="button">▶</button>
+        </div>
+
+        <div id="overlay" class="overlay">
+            <div class="overlay-card">
+                <h2 id="overlayTitle">Ready to drive?</h2>
+                <p id="overlayText">Avoid traffic and collect coins!</p>
+                <button id="overlayStart" type="button">▶ Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-info">
+        <div class="info-box">
+            <span>🪙</span>
+            <div>
+                <small>Coins Collected</small>
+                <b id="coinCount">0</b>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="startBtn" type="button">▶ Start Game</button>
+        <button id="pauseBtn" type="button" disabled>⏸ Pause Game</button>
+    </div>
+
+    <p id="message">Press Start Game to begin.</p>
+    <p class="help">
+        Controls: ← → or A/D | Mobile: hold ◀ ▶ | Space: Pause
+    </p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="script.js"></script>
+<script src="js/handtracking.js"></script>
+
+</body>
+</html>
